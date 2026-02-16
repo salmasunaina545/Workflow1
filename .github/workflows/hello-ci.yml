@@ -2,9 +2,11 @@ name: Greeting Workflow
 on: [push]
 
 jobs:
-  say-hello:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Run a greeting
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Python Tests
         run: python3 test_calc.py
